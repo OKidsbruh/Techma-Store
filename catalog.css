@@ -1,0 +1,2630 @@
+/* =========================
+   BASE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    padding-top: 90px;
+}
+
+
+/* =========================
+   CATALOG
+========================= */
+
+.catalog {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.catalog h1 {
+    margin-bottom: 20px;
+}
+
+/* =========================
+   SEARCH + FILTER
+========================= */
+
+.catalog-controls {
+    display: flex;
+    gap: 15px;
+
+    padding: 15px;
+    margin-bottom: 30px;
+
+    background: white;
+    border-radius: 12px;
+
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+/* search */
+.search-input {
+    flex: 1;
+
+    padding: 12px 14px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+}
+
+/* select */
+.filter-select {
+    padding: 12px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+
+
+/* картка */
+.product-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* картинка */
+.product-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+/* текст */
+.product-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.price {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* кнопка */
+.product-card button {
+    background: #007bff;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 8px 12px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.product-card button:hover {
+    background: #0056b3;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    margin-top: 50px;
+    padding: 20px;
+
+    background: white;
+    border-top: 1px solid #ddd;
+
+    text-align: center;
+}
+
+.footer p {
+    color: #666;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+
+    .header {
+        padding: 15px 20px;
+    }
+
+    .nav {
+        gap: 15px;
+    }
+
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog {
+        width: 90%;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 120px;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 12px;
+
+        padding: 15px;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .header-actions {
+        justify-content: center;
+    }
+
+    .catalog {
+        width: 95%;
+    }
+
+    .catalog-controls {
+        flex-direction: column;
+    }
+
+    .product-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-card img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+
+/* hover */
+.product-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+    0 6px 18px rgba(0,0,0,0.08);
+}
+/* =========================
+   PRODUCTS GRID (FINAL)
+========================= */
+
+.products-container {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(255px, 255px));
+
+    justify-content: center;
+
+    gap: 25px;
+
+    padding: 20px;
+
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+
+    .products-container {
+
+        grid-template-columns: repeat(auto-fit, 220px);
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .product-card img {
+        height: 130px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 520px) {
+
+    .products-container {
+
+        grid-template-columns: 280px;
+
+        justify-content: center;
+    }
+}
+/* =========================
+   PRODUCT CARD (FINAL)
+========================= */
+
+.product-card {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+
+    text-align: left;
+}
+
+/* hover */
+.product-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.product-card img {
+    width: 100%;
+    height: 160px;
+
+    object-fit: contain;
+
+    margin-bottom: 10px;
+}
+
+/* =========================
+   CATEGORY
+========================= */
+
+.product-category {
+    display: inline-block;
+
+    width: fit-content;
+
+    background: #eef4ff;
+    color: #007bff;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    padding: 5px 10px;
+    border-radius: 20px;
+
+    margin-bottom: 8px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.product-card h3 {
+    font-size: 14px;
+
+    line-height: 1.3;
+
+    margin-bottom: 8px;
+
+    min-height: 36px; /* 🔥 вирівнює всі картки */
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+
+    color: #111;
+
+    margin-bottom: 10px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.product-card button {
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #007bff;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.product-card button:hover {
+    background: #0056b3;
+}
+
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+    .product-card img {
+        height: 130px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 520px) {
+
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   MODAL BACKDROP
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+}
+
+/* =========================
+   MODAL BOX
+========================= */
+
+.modal-content {
+    background: #fff;
+
+    width: 90%;
+    max-width: 950px;
+
+    border-radius: 16px;
+
+    padding: 20px;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.modal-grid {
+    display: flex;
+    gap: 25px;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.modal-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-img {
+    width: 100%;
+    height: 320px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+    background: #f5f7fa;
+}
+
+/* =========================
+   THUMBNAILS
+========================= */
+
+.thumbs {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+.thumb {
+    width: 65px;
+    height: 65px;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+    border: 2px solid transparent;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* hover */
+.thumb:hover {
+    transform: scale(1.05);
+}
+
+/* активна картинка */
+.thumb.active {
+    border: 2px solid #007bff;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.modal-right {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* назва */
+.modal-right h2 {
+    margin-bottom: 10px;
+}
+
+/* ціна */
+.modal-right .price {
+    font-size: 24px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+/* характеристики */
+.specs p {
+    margin-bottom: 6px;
+    color: #444;
+}
+
+/* =========================
+   BOTTOM BUTTON (ВАЖЛИВО)
+========================= */
+
+.modal-bottom {
+    margin-top: auto; /* притискає вниз */
+
+    padding-top: 15px;
+}
+
+.buy-btn {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #007bff;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: #0056b3;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+
+    font-size: 26px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .modal-grid {
+        flex-direction: column;
+    }
+
+    .main-img {
+        height: 220px;
+    }
+}
+
+
+.product-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* Гарантуємо, що картка не розтягнеться безмежно */
+    height: 100%; 
+}
+
+/* Назва товару */
+.product-card h3 {
+    font-size: 1.1rem; /* Розмір залежить від системного шрифту */
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+    
+    /* Обмежуємо назву до 2-х рядків */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Самий опис */
+.product-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Опис заповнює вільне місце, притискаючи кнопку донизу */
+
+    /* "Магія" обрізання: показуємо лише 3 рядки */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Планшети та смартфони */
+@media (max-width: 768px) {
+    .product-card {
+        padding: 15px; /* Менше внутрішніх відступів */
+    }
+
+    .product-card h3 {
+        font-size: 1rem; /* Трохи менший заголовок */
+        -webkit-line-clamp: 1; /* На мобілці краще назву в 1 рядок */
+    }
+
+    .product-description {
+        font-size: 0.85rem;
+        -webkit-line-clamp: 2; /* Менше тексту, щоб не перевантажувати екран */
+    }
+}
+
+/* Дуже маленькі екрани (iPhone SE тощо) */
+@media (max-width: 380px) {
+    .product-description {
+        display: none; /* Іноді на мікро-екранах опис краще взагалі приховати */
+    }
+}
+/* =========================
+   GLOBAL DARK THEME
+========================= */
+
+body.dark-theme {
+    background: #121212;
+    color: #eaeaea;
+}
+
+/* всі блоки */
+body.dark-theme header,
+body.dark-theme .header,
+body.dark-theme .catalog-controls,
+body.dark-theme .product-card,
+body.dark-theme .footer,
+body.dark-theme .modal-content {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+/* текст */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p,
+body.dark-theme span {
+    color: #eaeaea;
+}
+
+/* навігація */
+body.dark-theme .nav a {
+    color: #ddd;
+}
+
+/* інпути */
+body.dark-theme .search-input,
+body.dark-theme .filter-select {
+    background: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+/* картки */
+body.dark-theme .product-card {
+    background: #1f1f1f;
+}
+
+/* ціна */
+body.dark-theme .price {
+    color: #4dabf7;
+}
+
+/* кнопки */
+body.dark-theme button {
+    background: #4dabf7;
+    color: #fff;
+}
+
+body.dark-theme button:hover {
+    background: #2d8fe0;
+}
+
+/* модалка фон */
+body.dark-theme .modal {
+    background: rgba(0,0,0,0.8);
+}
+/* =========================
+   DARK THEME FIXES (GLOBAL)
+========================= */
+
+body.dark-theme .logo {
+    color: #ffffff;
+}
+
+/* =========================
+   CATEGORY BADGE
+========================= */
+
+body.dark-theme .product-category {
+    background: #2a2a2a;
+    color: #4dabf7;
+    border: 1px solid #3a3a3a;
+}
+
+/* =========================
+   MODAL IMAGE BACKGROUND
+========================= */
+
+body.dark-theme .main-img {
+    background: #2a2a2a;
+}
+
+/* міні-картинки */
+body.dark-theme .thumb {
+    background: #2a2a2a;
+    border: 1px solid #333;
+}
+
+/* активна міні-картинка */
+body.dark-theme .thumb.active {
+    border: 2px solid #4dabf7;
+}
+
+/* =========================
+   MODAL TEXT BLOCK
+========================= */
+
+body.dark-theme .specs p {
+    color: #d6d6d6;
+}
+
+/* =========================
+   CARD CATEGORY (fallback)
+========================= */
+
+body.dark-theme .product-card .product-category {
+    background: #2b2b2b;
+    color: #4dabf7;
+}
+
+/* =========================
+   FIX HEADER TEXT
+========================= */
+
+body.dark-theme .header {
+    background: #1a1a1a;
+}
+
+body.dark-theme .nav a {
+    color: #cfcfcf;
+}
+
+body.dark-theme .nav a:hover {
+    color: #4dabf7;
+}
+/* =========================
+   MOBILE MODAL FIX
+========================= */
+
+@media (max-width: 768px) {
+
+    /* сама модалка */
+    .modal-content {
+        width: 95%;
+        max-height: 90vh; /* 🔥 головне обмеження */
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* внутрішній layout */
+    .modal-grid {
+        flex-direction: column;
+
+        /* 🔥 дозволяє скрол всередині */
+        overflow-y: auto;
+        max-height: 100%;
+        padding-right: 5px;
+    }
+
+    /* головна картинка */
+    .main-img {
+        height: 200px;
+    }
+
+    /* міні-картинки */
+    .thumbs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .thumb {
+        width: 55px;
+        height: 55px;
+    }
+
+    /* текст */
+    .modal-right h2 {
+        font-size: 18px;
+    }
+
+    .modal-right .price {
+        font-size: 20px;
+    }
+
+    .specs p {
+        font-size: 13px;
+    }
+
+    /* кнопка завжди видима */
+    .modal-bottom {
+        position: sticky;
+        bottom: 0;
+
+        background: inherit;
+        padding-top: 10px;
+    }
+}
+
+
+
+.thumb,
+.buy-btn,
+.close {
+    cursor: pointer;
+}
+.modal-content {
+    position: relative; /* 🔥 база для хрестика */
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background: rgba(0,0,0,0.05);
+    transition: 0.2s;
+}
+
+.close:hover {
+    background: rgba(0,0,0,0.15);
+}
+/* =========================
+   TOAST NOTIFICATIONS
+========================= */
+
+#toast-container {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+/* сам toast */
+.toast {
+    min-width: 260px;
+    max-width: 320px;
+
+    padding: 12px 14px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #e6e6e6;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+    transform: translateX(120%);
+    opacity: 0;
+
+    transition: 0.35s ease;
+
+    font-size: 14px;
+    color: #222;
+}
+
+/* показ */
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* темна тема */
+.dark-theme .toast {
+    background: rgba(25, 25, 25, 0.95);
+    border: 1px solid #333;
+    color: #fff;
+}
+
+/* акцент */
+.toast strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #007bff;
+}
+
+/* маленька анімація появи */
+@keyframes toastIn {
+    from {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.cart-btn{
+    position: relative;
+}
+
+
+/* кружечок */
+#cart-count{
+    position: absolute;
+
+    top: -10px;
+    right: -10px;
+
+    min-width: 22px;
+    height: 22px;
+
+    padding: 0 6px;
+
+    background: red;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.cart-btn{
+    text-decoration: none;
+}
+/* LOGO LIGHT (за замовчуванням вже є) */
+.logo{
+    text-decoration: none;
+    color: #111;
+    transition: 1s;
+}
+
+/* =========================
+   LOGO DARK MODE
+========================= */
+
+body.dark-theme .logo{
+    color: #fff;
+}
+
+.logo:hover{
+    transform: scale(1.05);  /* легке збільшення */
+    color: #007bff;          /* легка зміна кольору */
+
+}
+
+body.dark-theme .logo:hover{
+    color: #4dabf7;
+}
+
+.logo{
+    cursor: pointer;
+    text-decoration: none;
+    color: #111;
+
+    display: inline-block; /* потрібно для transform */
+
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+
+    background: #fff;
+
+    border-bottom: 1px solid #ddd;
+
+    transition: 0.3s;
+}
+
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+
+/* =========================
+   NAV
+========================= */
+
+.nav{
+
+    display: flex;
+
+    gap: 20px;
+}
+
+.nav a{
+
+    text-decoration: none;
+
+    color: #333;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+
+
+/* underline animation */
+
+.nav a::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -4px;
+
+    width: 0%;
+
+    height: 2px;
+
+    background: #007bff;
+
+    transition: 0.3s;
+}
+
+.nav a:hover{
+
+    color: #007bff;
+}
+
+.nav a:hover::after{
+
+    width: 100%;
+}
+
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.header-actions{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+
+/* =========================
+   CART BUTTON
+========================= */
+
+.cart-btn{
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background: #007bff;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 8px 14px;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.cart-btn:hover{
+
+    background: #0056b3;
+
+    transform: scale(1.05);
+}
+
+
+
+/* =========================
+   BADGE
+========================= */
+
+#cart-count{
+
+    position: absolute;
+
+    top: -10px;
+    right: -10px;
+
+    min-width: 22px;
+    height: 22px;
+
+    padding: 0 6px;
+
+    background: red;
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+
+/* =========================
+   THEME
+========================= */
+
+.theme-box{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.theme-text{
+
+    font-size: 12px;
+
+    color: #555;
+}
+
+
+
+/* =========================
+   SWITCH
+========================= */
+
+.theme-switch{
+
+    position: relative;
+
+    width: 46px;
+    height: 24px;
+}
+
+.theme-switch input{
+
+    display: none;
+}
+
+.slider-switch{
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: #ccc;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.slider-switch::before{
+
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    top: 3px;
+    left: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+.theme-switch input:checked + .slider-switch{
+
+    background: #4dabf7;
+}
+
+.theme-switch input:checked + .slider-switch::before{
+
+    transform: translateX(22px);
+}
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* логотип */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* меню */
+.nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* блок справа */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ===== КНОПКА КОШИКА ===== */
+.cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ===== SWITCH ===== */
+.theme-switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+}
+
+/* ховаємо checkbox */
+.theme-switch input {
+    display: none;
+}
+
+/* сам переключатель */
+.slider-switch {
+    position: absolute;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+/* кружок */
+.slider-switch::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* коли активний */
+.theme-switch input:checked + .slider-switch {
+    background: #4dabf7;
+}
+
+.theme-switch input:checked + .slider-switch::before {
+    transform: translateX(24px);
+}
+
+/* =========================
+   TABLET & LAPTOP RESPONSIVE (Як на головній)
+========================= */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px; /* Саме цей відступ створює баланс на планшетах */
+    }
+
+    body {
+        padding-top: 90px;
+    }
+
+    .nav {
+        gap: 25px;
+    }
+
+    .catalog {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 120px; /* Щоб контент каталогу не ховався під високий мобільний хедер */
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 15px; /* Ідентичні мобільні відступи з головної */
+    }
+
+    /* Інші стилі всередині @media (max-width: 768px) залишаємо без змін */
+    .logo {
+        text-align: center;
+        order: 1;
+        width: 100%;
+    }
+
+    .nav {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .header-actions {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .catalog {
+        width: 95%;
+    }
+
+    .catalog-controls {
+        flex-direction: column;
+    }
+}
+.nav {
+    display: flex;
+    gap: 5px; /* Зменшуємо gap, бо тепер додадуться марджини */
+}
+
+
+#toast-container {
+    top: 80px;
+}
+
+/* =========================
+   PRODUCT CARD (FINAL)
+========================= */
+
+.product-card {
+    background: white;
+    border-radius: 14px;
+    padding: 14px;
+
+    /* Перетворюємо картку на гнучкий flex-бокс */
+    display: flex;
+    flex-direction: column;
+    
+    /* Гарантуємо, що всі картки в одному рядку сітки будуть однакової висоти */
+    height: 100%; 
+
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: left;
+}
+
+/* Назва товару */
+.product-card h3 {
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    
+    /* Обрізаємо назву до 2-х рядків, якщо текст задовгий */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+    /* Прибираємо старий min-height, бо flexbox тепер сам усе вирівняє */
+    min-height: auto; 
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #111;
+
+    /* 🔥 МАГІЯ ТУТ: марджин авто виштовхує все, що нижче (кнопку), до самого низу картки */
+    margin-bottom: auto; 
+    padding-bottom: 15px; /* додаємо невеликий відступ до кнопки */
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.product-card button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    
+    /* Кнопка тепер чітко зафіксована внизу */
+    margin-top: 0; 
+}
+
+/* =========================
+   PRODUCTS GRID (FINAL)
+========================= */
+
+.products-container {
+    display: grid;
+    /* Автоматично підбирає колонки шириною 255px, а вільний простір розподіляє порівну */
+    grid-template-columns: repeat(auto-fit, 255px); 
+    
+    /* 🔥 Центрує саму сітку та картки всередині, якщо товарів мало (навіть якщо він 1) */
+    justify-content: center; 
+    align-items: start;
+    
+    gap: 25px;
+    padding: 20px;
+    width: 100%;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .products-container {
+        /* Замість 1fr робимо 2 фіксовані колонки по центру, щоб вони не розповзалися */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .product-card img {
+        height: 130px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 520px) {
+
+    .products-container {
+        /* На телефонах картка буде мати комфортну ширину до 280px і стоятиме рівно по центру екрана */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+        justify-content: center;
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+
+    background: #fff;
+
+    border-bottom: 1px solid #ddd;
+
+    transition: 0.3s;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+    cursor: pointer;
+    text-decoration: none;
+
+    color: #111;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    display: inline-block;
+
+    transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.logo:hover{
+    transform: scale(1.05);
+
+    color: #007bff;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav{
+    display: flex;
+
+    gap: 20px;
+}
+
+.nav a{
+    text-decoration: none;
+
+    color: #333;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+/* underline animation */
+
+.nav a::after{
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -4px;
+
+    width: 0%;
+
+    height: 2px;
+
+    background: #007bff;
+
+    transition: 0.3s;
+}
+
+.nav a:hover{
+    color: #007bff;
+}
+
+.nav a:hover::after{
+    width: 100%;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.header-actions{
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+/* =========================
+   CART BUTTON
+========================= */
+
+.cart-btn{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background: #007bff;
+
+    color: white;
+
+    text-decoration: none;
+
+    border: none;
+
+    padding: 8px 14px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.cart-btn:hover{
+    background: #0056b3;
+
+    transform: scale(1.05);
+}
+
+/* =========================
+   CART BADGE
+========================= */
+
+#cart-count{
+    position: absolute;
+
+    top: -10px;
+    right: -10px;
+
+    min-width: 22px;
+    height: 22px;
+
+    padding: 0 6px;
+
+    background: red;
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+/* =========================
+   THEME BOX
+========================= */
+
+.theme-box{
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.theme-text{
+    font-size: 12px;
+
+    color: #555;
+}
+
+/* =========================
+   SWITCH
+========================= */
+
+.theme-switch{
+    position: relative;
+
+    width: 50px;
+    height: 26px;
+}
+
+/* hide checkbox */
+
+.theme-switch input{
+    display: none;
+}
+
+/* slider */
+
+.slider-switch{
+    position: absolute;
+
+    cursor: pointer;
+
+    background: #ccc;
+
+    border-radius: 20px;
+
+    width: 100%;
+    height: 100%;
+
+    transition: 0.3s;
+}
+
+/* circle */
+
+.slider-switch::before{
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    left: 3px;
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+/* active */
+
+.theme-switch input:checked + .slider-switch{
+    background: #4dabf7;
+}
+
+.theme-switch input:checked + .slider-switch::before{
+    transform: translateX(24px);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark{
+    background:
+    linear-gradient(to bottom,#0f1115,#181c24);
+
+    color: #eee;
+}
+
+/* header dark */
+
+body.dark .header{
+    background: #1b1b1b;
+
+    border-bottom: 1px solid #333;
+}
+
+/* logo dark */
+
+body.dark .logo{
+    color: #fff;
+}
+
+body.dark .logo:hover{
+    color: #4dabf7;
+}
+
+/* nav dark */
+
+body.dark .nav a{
+    color: #ddd;
+}
+
+body.dark .nav a:hover{
+    color: #4dabf7;
+}
+
+/* theme text dark */
+
+body.dark .theme-text{
+    color: #ccc;
+}
+
+/* cart dark */
+
+body.dark .cart-btn{
+    background: #4dabf7;
+}
+
+body.dark .cart-btn:hover{
+    background: #339af0;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) and (min-width: 769px){
+
+    .header{
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 15px 40px;
+    }
+
+    body{
+        padding-top: 90px;
+    }
+
+    .nav{
+        gap: 25px;
+    }
+}
+
+/* =========================
+   MOBILE HEADER
+========================= */
+
+@media (max-width: 768px){
+
+    body{
+        padding-top: 120px;
+    }
+
+    .header{
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 12px 15px;
+    }
+
+    .logo{
+        order: 1;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .nav{
+        order: 2;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+    .nav a{
+        font-size: 14px;
+    }
+
+    .header-actions{
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+}
+/* =========================
+   HEADER
+========================= */
+
+.header{
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+
+    background: #fff;
+
+    border-bottom: 1px solid #ddd;
+
+    transition: 0.3s;
+}
+
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+
+/* =========================
+   NAV
+========================= */
+
+.nav{
+
+    display: flex;
+
+    gap: 20px;
+}
+
+.nav a{
+
+    text-decoration: none;
+
+    color: #333;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+
+
+/* underline animation */
+
+.nav a::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -4px;
+
+    width: 0%;
+
+    height: 2px;
+
+    background: #007bff;
+
+    transition: 0.3s;
+}
+
+.nav a:hover{
+
+    color: #007bff;
+}
+
+.nav a:hover::after{
+
+    width: 100%;
+}
+
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.header-actions{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+
+/* =========================
+   CART BUTTON
+========================= */
+
+.cart-btn{
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background: #007bff;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 8px 14px;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.cart-btn:hover{
+
+    background: #0056b3;
+
+    transform: scale(1.05);
+}
+
+
+
+/* =========================
+   BADGE
+========================= */
+
+#cart-count{
+
+    position: absolute;
+
+    top: -10px;
+    right: -10px;
+
+    min-width: 22px;
+    height: 22px;
+
+    padding: 0 6px;
+
+    background: red;
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+
+/* =========================
+   THEME
+========================= */
+
+.theme-box{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.theme-text{
+
+    font-size: 12px;
+
+    color: #555;
+}
+
+
+
+/* =========================
+   SWITCH
+========================= */
+
+.theme-switch{
+
+    position: relative;
+
+    width: 46px;
+    height: 24px;
+}
+
+.theme-switch input{
+
+    display: none;
+}
+
+.slider-switch{
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: #ccc;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.slider-switch::before{
+
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    top: 3px;
+    left: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+.theme-switch input:checked + .slider-switch{
+
+    background: #4dabf7;
+}
+
+.theme-switch input:checked + .slider-switch::before{
+
+    transform: translateX(22px);
+}
+
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-theme{
+
+    background:
+    linear-gradient(to bottom,#0f1115,#181c24);
+
+    color: #eee;
+}
+
+
+
+/* header dark */
+
+body.dark-theme .header{
+
+    background: #1b1b1b;
+
+    border-bottom: 1px solid #333;
+}
+
+body.dark-theme .nav a{
+
+    color: #ddd;
+}
+
+body.dark-theme .nav a:hover{
+
+    color: #4dabf7;
+}
+
+body.dark-theme .theme-text{
+
+    color: #ccc;
+}
+
+body.dark-theme .cart-btn{
+
+    background: #4dabf7;
+}
+
+body.dark-theme .cart-btn:hover{
+
+    background: #339af0;
+}
+
+/* LOGO LIGHT (за замовчуванням вже є) */
+
+.logo{
+
+    cursor:pointer;
+    text-decoration: none;
+    color: #111;
+    transition: 1s;
+}
+
+/* =========================
+   LOGO DARK MODE
+========================= */
+
+body.dark-theme .logo{
+
+    cursor:pointer;
+    color: #fff;
+}
+
+.logo:hover{
+
+    transform: scale(1.05);
+
+    color: #007bff;
+}
+
+body.dark-theme .logo:hover{
+
+    color: #4dabf7;
+}
+
+.logo{
+
+    cursor: pointer;
+    text-decoration: none;
+    color: #111;
+
+    display: inline-block;
+
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* ===== HEADER ===== */
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* логотип */
+
+.logo {
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* меню */
+
+.nav a {
+
+    text-decoration: none;
+    color: #333;
+}
+
+/* блок справа */
+
+.header-actions {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ===== КНОПКА КОШИКА ===== */
+
+.cart-btn {
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ===== SWITCH ===== */
+
+.theme-switch {
+
+    position: relative;
+    width: 50px;
+    height: 26px;
+}
+
+/* ховаємо checkbox */
+
+.theme-switch input {
+
+    display: none;
+}
+
+/* сам переключатель */
+
+.slider-switch {
+
+    position: absolute;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+/* кружок */
+
+.slider-switch::before {
+
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* коли активний */
+
+.theme-switch input:checked + .slider-switch {
+
+    background: #4dabf7;
+}
+
+.theme-switch input:checked + .slider-switch::before {
+
+    transform: translateX(24px);
+}
+
+/* ===== HEADER FIXED ===== */
+
+.header {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.header {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* =========================
+   TABLET & LAPTOP RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+
+    .header {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 15px 40px;
+    }
+
+    body {
+
+        padding-top: 90px;
+    }
+
+    .nav {
+
+        gap: 25px;
+    }
+
+    .catalog {
+
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+
+        padding-top: 120px;
+    }
+
+    .header {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 12px 15px;
+    }
+
+    .logo {
+
+        text-align: center;
+        order: 1;
+        width: 100%;
+    }
+
+    .nav {
+
+        order: 2;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+    .header-actions {
+
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .catalog {
+
+        width: 95%;
+    }
+
+    .catalog-controls {
+
+        flex-direction: column;
+    }
+}
+
+/* ===== МЕНЮ НА ГОЛОВНІЙ ===== */
+
+.nav {
+
+    display: flex;
+
+    gap: 20px;
+}
+
+.nav a {
+
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav {
+
+    display: flex;
+    gap: 2px;
+}
+
+.nav a {
+
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    transition: 0.3s;
+}

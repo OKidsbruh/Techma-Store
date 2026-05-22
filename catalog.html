@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог | Techma Store</title>
+    <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+
+<header class="header">
+
+    <a href="index.html" class="logo">Techma Store</a>
+
+    <nav class="nav">
+        <a href="index.html">Головна</a>
+        <a href="catalog.html">Товари</a>
+        <a href="contacts.html">Контакти</a>
+    </nav>
+
+    <div class="header-actions">
+
+    <a href="cart.html" class="cart-btn">
+
+        🛒 Кошик
+
+        <!-- кружечок -->
+        <span id="cart-count">0</span>
+
+    </a>
+
+
+
+        <div class="theme-box">
+
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider-switch"></span>
+            </label>
+
+            <span class="theme-text">Тема</span>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ===== CATALOG ===== -->
+<main class="catalog">
+
+    <h1>Каталог товарів</h1>
+
+    <!-- ПОШУК -->
+    <div class="catalog-controls">
+
+        <input type="text" placeholder="Пошук товарів..." class="search-input">
+
+        <select class="filter-select">
+            <option>Всі категорії</option>
+            <option>Ноутбуки</option>
+            <option>Смартфони</option>
+            <option>Навушники</option>
+            <option>Годинники</option>
+        </select>
+
+    </div>
+    <div class="products-container" id="products-container"></div>
+
+    
+
+
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-container">
+        <p>© 2026 Techma Store. Всі права захищені.</p>
+    </div>
+</footer>
+
+<script src="catalog.js"></script>
+<div id="toast-container"></div>
+</body>
+</html>

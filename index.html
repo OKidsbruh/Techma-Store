@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techma Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <a href="index.html" class="logo">Techma Store</a>
+
+    <nav class="nav">
+        <a href="index.html">Головна</a>
+        <a href="catalog.html">Товари</a>
+        <a href="contacts.html">Контакти</a>
+    </nav>
+
+     <div class="header-actions">
+
+    <a href="cart.html" class="cart-btn">
+
+        🛒 Кошик
+
+        <!-- кружечок -->
+        <span id="cart-count">0</span>
+
+    </a>
+
+
+        <!-- SWITCH + ПІДПИС -->
+        <div class="theme-box">
+
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider-switch"></span>
+            </label>
+
+            <span class="theme-text">Тема</span>
+        </div>
+
+    </div>
+
+</header>
+
+<section class="banner-wrapper">
+    <div class="slider">
+        <button class="arrow left">❮</button>
+
+        <div class="slides">
+            <div class="slide active">
+                <img src="https://img.freepik.com/premium-vector/black-friday-sale-promotion-web-banner-background-design-black-friday-super-sale-discount-social-media-poster-banner-backdrop-template-cover-ads-flyers-invitation-card-brochure_871757-3188.jpg?semt=ais_hybrid&w=740&q=80">
+            </div>
+
+            <div class="slide">
+                <img src="banner4.png">
+            </div>
+            
+            <div class="slide">
+                <img src="https://img.freepik.com/premium-photo/pink-display-with-pink-background-that-says-percent-discounts_1213494-14277.jpg?semt=ais_hybrid&w=740&q=80">
+            </div>
+
+        </div>
+
+        <button class="arrow right">❯</button>
+    </div>
+</section>
+
+<section class="about">
+    <div class="about-container">
+
+        <!-- текст -->
+        <div class="about-text">
+            <h2>Про Techma Store</h2>
+            <p>
+                Techma Store — це сучасний інтернет-магазин техніки, де ти можеш знайти 
+                ноутбуки, смартфони, аксесуари та інші гаджети за вигідними цінами.
+            </p>
+
+            <p>
+                Ми пропонуємо тільки перевірені товари, швидку доставку та зручний інтерфейс 
+                для покупок. Наш сайт створений для комфортного користування як на комп’ютері, 
+                так і на телефоні.
+            </p>
+        </div>
+
+        <!-- картинка -->
+        <div class="about-img">
+            <img src="about.png" alt="about">
+        </div>
+
+    </div>
+</section>
+
+<section class="products">
+    <h2>Популярні товари</h2>
+
+    <div class="products-container">
+
+        <!-- КАРТКА 1 -->
+        <div class="product-card">
+            <img src="ASUSTUFGaming.png">
+            <h3>Ноутбук ASUS TUF Gaming</h3>
+            <p class="price">47 999 грн</p>
+            <button onclick="addToCartById(1)" class="buy-btn">Купити</button>
+        </div>
+
+        <!-- КАРТКА 2 -->
+        <div class="product-card">
+            <img src="S26ultra.png">
+            <h3>Мобільний телефон Samsung Galaxy S26 Ultra</h3>
+            <p class="price">70 999 грн</p>
+            <button onclick="addToCartById(2)" class="buy-btn">Купити</button>
+        </div>
+
+        <!-- КАРТКА 3 -->
+        <div class="product-card">
+            <img src="AppleAirPodsPro.png">
+            <h3>Навушники Apple AirPods Pro</h3>
+            <p class="price">14 099 грн</p>
+            <button onclick="addToCartById(3)" class="buy-btn">Купити</button>
+        </div>
+
+        <!-- КАРТКА 4 -->
+        <div class="product-card">
+            <img src="AppleWatchSE3.png">
+            <h3>Смарт-годинник Apple Watch SE 3</h3>
+            <p class="price">13 899 грн</p>
+            <button onclick="addToCartById(4)" class="buy-btn">Купити</button>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-container">
+        <p>© 2026 Techma Store. Всі права захищені.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<div id="toast-container"></div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти | Tecma Store</title>
+    <link rel="stylesheet" href="contacs.css">
+</head>
+<body>
+    <header class="header">
+
+    <a href="index.html" class="logo">Techma Store</a>
+
+    <nav class="nav">
+        <a href="index.html">Головна</a>
+        <a href="catalog.html">Товари</a>
+        <a href="contacts.html">Контакти</a>
+    </nav>
+
+     <div class="header-actions">
+
+    <a href="cart.html" class="cart-btn">
+
+        🛒 Кошик
+
+        <!-- кружечок -->
+        <span id="cart-count">0</span>
+
+    </a>
+
+
+        <!-- SWITCH + ПІДПИС -->
+        <div class="theme-box">
+
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider-switch"></span>
+            </label>
+
+            <span class="theme-text">Тема</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+    <main class="contacts-section">
+    <div class="container">
+        <h1 class="contact-title">Зв'яжіться з нами</h1>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>📍 Адреса</h3>
+                    <p>Київ, проспект Перемоги, 123<br>Tecma Store Hub</p>
+                </div>
+                <div class="info-card">
+                    <h3>📞 Телефони</h3>
+                    <p>
+                        <a href="tel:+380991234567">+38 (099) 123-45-67</a><br>
+                        <a href="tel:+380671234567">+38 (067) 123-45-67</a>
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>✉️ Електронна пошта</h3>
+                    <p><a href="mailto:support@tecma.com">support@tecma.com</a></p>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <h2>Напишіть нам</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Ваше ім'я</label>
+                        <input type="text" id="name" name="name" required placeholder="Іван Іваненко">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ваш Email</label>
+                        <input type="email" id="email" name="email" required placeholder="example@mail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Повідомлення</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Опишіть ваше запитання..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Відправити повідомлення</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- SUCCESS MODAL -->
+<div class="success-modal" id="success-modal">
+
+    <div class="success-box">
+
+        <div class="success-icon">✔</div>
+
+        <h3>Готово!</h3>
+
+        <p id="success-text">
+            Повідомлення відправлено
+        </p>
+
+        <button id="close-success">
+            Закрити
+        </button>
+
+    </div>
+
+
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-container">
+        <p>© 2026 Techma Store. Всі права захищені.</p>
+    </div>
+</footer>
+    <script src="contacts.js"></script>
+</body>
+</html>
