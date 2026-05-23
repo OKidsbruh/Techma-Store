@@ -1054,7 +1054,7 @@ body.dark .logo:hover{
 .nav{
     display: flex;
 
-    gap: 0px;
+    gap: 2px;
 }
 
 .nav a{
@@ -1368,7 +1368,7 @@ body.dark .cart-btn:hover{
 
         flex-wrap: wrap;
 
-        gap: 8px;
+        gap: 2px;
     }
 
     .nav a{
